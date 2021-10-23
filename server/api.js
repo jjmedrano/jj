@@ -23,7 +23,7 @@ app.use(requestIp.mw())
 
 //Email Submission Endpoint
 router.post("*/submit", async (req, res) => {
-  res.redirect("/reservation");
+  res.redirect("/checkout-page");
 });
 
 //Facebook Server Side Tracking Endpoint
