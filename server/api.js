@@ -12,7 +12,7 @@ const UserData = bizSdk.UserData;
 const ServerEvent = bizSdk.ServerEvent;
 const requestIp = require('request-ip');
 
-const access_token = process.env.FACEBOOK_ACCESS_TOKEN;
+//const access_token = process.env.FACEBOOK_ACCESS_TOKEN;
 const pixel_id = 'PIXEL_ID';
 const api = bizSdk.FacebookAdsApi.init(access_token);
 
