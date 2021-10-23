@@ -29,32 +29,6 @@ router.post("*/submit", async (req, res) => {
 //Facebook Server Side Tracking Endpoint
 router.post("*/server-side-tracking", async (req, res) => {
 
-  let current_timestamp = Math.floor(new Date() / 1000);
-
-  const userData = (new UserData())
-    .setClientIpAddress(req.clientIp)
-    .setClientUserAgent(req.headers['user-agent'])
-
-  const serverEvent = (new ServerEvent())
-    .setEventName(req.body.eventName)
-    .setEventTime(current_timestamp)
-    .setUserData(userData)
-    .setEventSourceUrl(req.body.eventUrl)
-    .setActionSource('website')
-    .setEventId(req.body.eventId);
-
-  const eventsData = [serverEvent];
-  const eventRequest = (new EventRequest(access_token, pixel_id))
-    .setEvents(eventsData);
-
-  eventRequest.execute().then(
-    response => {
-      console.log('Response: ', response);
-    },
-    err => {
-      console.error('Error: ', err);
-    }
-  );
 });
 
 //Stripe Payment Endpoint
